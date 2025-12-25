@@ -1,0 +1,1 @@
+final String kLogo = 'assets/images/logo1.png';
