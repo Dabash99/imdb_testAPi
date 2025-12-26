@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:imdb_test/modules/homeScreen.dart';
 import 'package:imdb_test/shared/styles/themes.dart';
 
 import 'modules/splashScreen.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'IMDB Testing',
       theme: AppTheme.darkTheme,
-      home: Splashscreen(),
+      home: Homescreen(),
     );
   }
 }
