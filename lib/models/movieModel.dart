@@ -1,4 +1,4 @@
-class Movie {
+class MovieModel {
   final int rank;
   final String title;
   final String description;
@@ -12,7 +12,7 @@ class Movie {
   final String imdbid;
   final String imdbLink;
 
-  Movie({
+  MovieModel({
     required this.rank,
     required this.title,
     required this.description,
@@ -28,8 +28,8 @@ class Movie {
   });
 
   // Factory constructor for creating a Movie instance from a map
-  factory Movie.fromJson(Map<String, dynamic> json) {
-    return Movie(
+  factory MovieModel.fromJson(Map<String, dynamic> json) {
+    return MovieModel(
       rank: json['rank'] ?? 0,
       title: json['title'] ?? '',
       description: json['description'] ?? '',

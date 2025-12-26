@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 
 class DioHelper {
   static Dio? dio;
@@ -9,56 +8,22 @@ class DioHelper {
       BaseOptions(
         baseUrl: 'https://imdb-top-100-movies.p.rapidapi.com/',
         receiveDataWhenStatusError: true,
-        headers: {'Content-Type': 'application/json'},
+        headers: {
+          'Content-Type': 'application/json',
+          'x-rapidapi-host': 'imdb-top-100-movies.p.rapidapi.com',
+          'x-rapidapi-key': 'd1893ce3a3msh33334e66b7bd286p173b61jsnca4585662cdb',
+        },
       ),
     );
   }
 
-  static Future<Response?> getData({
-    @required String? url,
+  static Future<Response> getData({
+    String url = '',
     Map<String, dynamic>? query,
-    String? token,
   }) async {
-    dio?.options.headers = {
-      'Authorization': token,
-      'Content-Type': 'application/json',
-    };
-
-    return dio!.get(url!, queryParameters: query);
-  }
-
-  static Future<Response> postData({
-    @required String? url,
-    Map<String, dynamic>? data,
-    Map<String, dynamic>? query,
-    String? token,
-  }) async {
-    dio!.options.headers = {
-      'Authorization': token,
-      'Content-Type': 'application/json',
-    };
-
-    return dio!.post(url!, queryParameters: query, data: data);
-  }
-
-  static Future<Response> putData({
-    @required String? url,
-    @required Map<String, dynamic>? data,
-    Map<String, dynamic>? query,
-    String? token,
-  }) async {
-    dio!.options.headers = {
-      'Authorization': token ?? '',
-      'Content-Type': 'application/json',
-    };
-
-    return dio!.put(url!, queryParameters: query, data: data);
-  }
-
-  static Future<Response> RegisterPost({
-    @required String? url,
-    Map<String, dynamic>? data,
-  }) async {
-    return await dio!.post(url!, data: data);
+    return await dio!.get(
+      url,
+      queryParameters: query,
+    );
   }
 }

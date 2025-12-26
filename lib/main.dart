@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:imdb_test/modules/homeScreen.dart';
+import 'package:imdb_test/modules/splashScreen.dart';
+import 'package:imdb_test/shared/network/remote/dio_helper.dart';
 import 'package:imdb_test/shared/styles/themes.dart';
 
-import 'modules/splashScreen.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await DioHelper.init();
   runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'IMDB Testing',
       theme: AppTheme.darkTheme,
-      home: Homescreen(),
+      home: Splashscreen(),
     );
   }
 }

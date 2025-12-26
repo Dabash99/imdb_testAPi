@@ -1,8 +1,7 @@
+import 'dart:async'; // مكتبة الوقت
 import 'package:flutter/material.dart';
-import 'package:imdb_test/modules/homeScreen.dart';
+import 'package:imdb_test/modules/home/homeScreen.dart';
 import 'package:imdb_test/shared/components/constants.dart';
-import 'package:imdb_test/shared/components/functions.dart';
-
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
@@ -12,8 +11,18 @@ class Splashscreen extends StatefulWidget {
 }
 
 class _SplashscreenState extends State<Splashscreen> {
+
   @override
-  
+  void initState() {
+    super.initState();
+    Timer(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const Homescreen()),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +33,9 @@ class _SplashscreenState extends State<Splashscreen> {
             left: 0,
             child: Image.asset(kBlurBackground),
           ),
-          Center(child: Image.asset(kLogo,height: 250,),),
+          Center(
+            child: Image.asset(kLogo, height: 250),
+          ),
         ],
       ),
     );
