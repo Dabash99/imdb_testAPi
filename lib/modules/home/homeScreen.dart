@@ -71,11 +71,9 @@ class Homescreen extends StatelessWidget {
                               var movie = cubit.moviesList[index];
                               String idToSend = 'top${index + 1}';
 
-                              // 2. تغليف الكارت بـ InkWell عشان يبقى كليكابل
-                              return InkWell(
+                              return GestureDetector(
                                 onTap: () {
                                   navigateTo(context, MovieDetailsScreen(movieId: idToSend));
-
                                 },
                                 child: movieCard(
                                   movieimage: movie.image,
@@ -88,7 +86,6 @@ class Homescreen extends StatelessWidget {
                             },
                           ),
                         ),
-
                       ],
                     ),
                   ),

@@ -11,7 +11,7 @@ class DioHelper {
         headers: {
           'Content-Type': 'application/json',
           'x-rapidapi-host': 'imdb-top-100-movies.p.rapidapi.com',
-          'x-rapidapi-key': 'd1893ce3a3msh33334e66b7bd286p173b61jsnca4585662cdb',
+          'x-rapidapi-key': '5f89001d07msh1d032cdb272da90p1db04ajsne64e1243f419',
         },
       ),
     );
